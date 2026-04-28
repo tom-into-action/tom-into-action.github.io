@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tan | tominaction</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    svg.trail { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; opacity: 0; }
+    .comet-path { fill: none; stroke: url(#cometGrad); stroke-width: 2.5; stroke-linecap: round; }
+    .page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1rem; text-align: center; }
+    .found-me { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #b8a9ff; text-shadow: 0 0 12px rgba(150,120,255,0.7); margin-bottom: 1.6rem; }
+    .hero-heading { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.6rem; }
+    .hero-heading .italic { font-style: italic; font-weight: 400; }
+    .subtitle { font-size: 0.95rem; color: #888; font-weight: 300; margin-bottom: 0.6rem; }
+    #reason { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.35rem); color: #5b9cf6; min-height: 2em; margin-bottom: 2.4rem; transition: opacity 0.4s ease; }
+    #reason.fade-out { opacity: 0; }
+    .divider { width: 60px; height: 1px; background: #333; margin: 0 auto 2.4rem; }
+    .links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; width: 100%; max-width: 520px; margin-bottom: 3rem; }
+    .link-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.85rem 1.2rem; background: #111; border: 1px solid #222; border-radius: 12px; color: #e0e0e0; font-size: 0.9rem; text-decoration: none; transition: background 0.18s, border-color 0.18s, transform 0.12s; }
+    .link-btn:hover { background: #1a1a1a; border-color: #444; transform: translateY(-1px); }
+    footer { display: flex; align-items: center; gap: 0.5rem; color: #444; font-size: 0.78rem; }
+    footer a { color: #555; text-decoration: none; }
+    .gh-icon { width: 16px; height: 16px; fill: #555; }
+  </style>
+</head>
+<body>
+  <svg class="trail" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="cometGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:rgba(255,255,255,0);stop-opacity:0" />
+        <stop offset="100%" style="stop-color:rgba(200,180,255,0.9);stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <path class="comet-path" d="" />
+    <g class="comet-head"><polygon points="0,-4 1,1 -1,1" fill="white" opacity="0.9" /></g>
+  </svg>
+  <div class="page">
+    <p class="found-me">✨ You found me ✨</p>
+    <h1 class="hero-heading">Hey, I'm <span class="italic">Tan</span></h1>
+    <p class="subtitle">You landed here because</p>
+    <p id="reason">we met at a conference</p>
+    <div class="divider"></div>
+    <div class="links">
+      <a class="link-btn" href="https://github.com/tom-into-action" target="_blank">🌐 Website</a>
+      <a class="link-btn" href="#" target="_blank">📰 Newsletter</a>
+      <a class="link-btn" href="#" target="_blank">📺 YouTube</a>
+      <a class="link-btn" href="#" target="_blank">💼 LinkedIn</a>
+      <a class="link-btn" href="#" target="_blank">🐦 Twitter / X</a>
+      <a class="link-btn" href="mailto:tanmay.tf7@gmail.com">✉️ Email</a>
+    </div>
+    <footer>
+      <span>tominaction</span><span>·</span>
+      <a href="https://github.com/tom-into-action" target="_blank">
+        <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+    </footer>
+  </div>
+  <script>
+    const reasons=["we met at a conference","you watched my talk","you scanned my badge","the universe made it happen","you are curious like that","fate brought you here","you follow great people","a QR code led you here","the algorithm chose wisely","we vibed at a meetup","you are doing your research","coffee chat energy found you","you are building something cool too","open source brought us together","you believe in building in public","serendipity has a URL now"];
+    const el=document.getElementById('reason');
+    setInterval(()=>{el.classList.add('fade-out');setTimeout(()=>{el.textContent=reasons[Math.floor(Math.random()*reasons.length)];el.classList.remove('fade-out');},400);},3000);
+    const svg=document.querySelector('svg.trail'),path=svg.querySelector('.comet-path'),head=svg.querySelector('.comet-head');
+    let points=[],pointer={x:innerWidth/2,y:innerHeight/2},rotation=0,timer=null;
+    const resize=()=>{svg.style.width=innerWidth+'px';svg.style.height=innerHeight+'px';svg.setAttribute('viewBox','0 0 '+innerWidth+' '+innerHeight);};
+    const update=(x,y)=>{pointer.x=x;pointer.y=y;if(!points.length){points=Array.from({length:50},()=>({x,y}));}svg.style.opacity='1';clearTimeout(timer);timer=setTimeout(()=>{svg.style.opacity='0';},200);};
+    document.addEventListener('mousemove',e=>update(e.clientX,e.clientY));
+    (function anim(){if(points.length){let px=pointer.x,py=pointer.y;points.forEach((p,i)=>{p.x=px;p.y=py;const n=points[i+1];if(n){px-=(p.x-n.x)*.7;py-=(p.y-n.y)*.7;}});path.setAttribute('d','M '+points.map(p=>p.x+' '+p.y).join(' L '));rotation+=2;head.setAttribute('transform','translate('+pointer.x+','+pointer.y+') rotate('+rotation+')');}requestAnimationFrame(anim);})();
+    window.addEventListener('resize',resize);svg.style.opacity='0';resize();
+  </script>
+</body>
+</html>
