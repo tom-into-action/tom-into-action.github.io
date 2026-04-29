@@ -49,7 +49,7 @@
       <a class="link-btn" href="#" target="_blank">📺 YouTube</a>
       <a class="link-btn" href="#" target="_blank">💼 LinkedIn</a>
       <a class="link-btn" href="#" target="_blank">🐦 Twitter / X</a>
-      <a class="link-btn" href="mailto:tanmay.tf7@gmail.com">✉️ Email</a>
+      <a class="link-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=tanmay.tf7@gmail.com" target="_blank">✉️ Email</a>
     </div>
     <footer>
       <span>tominaction</span><span>·</span>
@@ -60,15 +60,3 @@
   </div>
   <script>
     const reasons=["we met at a conference","you watched my talk","you scanned my badge","the universe made it happen","you are curious like that","fate brought you here","you follow great people","a QR code led you here","the algorithm chose wisely","we vibed at a meetup","you are doing your research","coffee chat energy found you","you are building something cool too","open source brought us together","you believe in building in public","serendipity has a URL now"];
-    const el=document.getElementById('reason');
-    setInterval(()=>{el.classList.add('fade-out');setTimeout(()=>{el.textContent=reasons[Math.floor(Math.random()*reasons.length)];el.classList.remove('fade-out');},400);},3000);
-    const svg=document.querySelector('svg.trail'),path=svg.querySelector('.comet-path'),head=svg.querySelector('.comet-head');
-    let points=[],pointer={x:innerWidth/2,y:innerHeight/2},rotation=0,timer=null;
-    const resize=()=>{svg.style.width=innerWidth+'px';svg.style.height=innerHeight+'px';svg.setAttribute('viewBox','0 0 '+innerWidth+' '+innerHeight);};
-    const update=(x,y)=>{pointer.x=x;pointer.y=y;if(!points.length){points=Array.from({length:50},()=>({x,y}));}svg.style.opacity='1';clearTimeout(timer);timer=setTimeout(()=>{svg.style.opacity='0';},200);};
-    document.addEventListener('mousemove',e=>update(e.clientX,e.clientY));
-    (function anim(){if(points.length){let px=pointer.x,py=pointer.y;points.forEach((p,i)=>{p.x=px;p.y=py;const n=points[i+1];if(n){px-=(p.x-n.x)*.7;py-=(p.y-n.y)*.7;}});path.setAttribute('d','M '+points.map(p=>p.x+' '+p.y).join(' L '));rotation+=2;head.setAttribute('transform','translate('+pointer.x+','+pointer.y+') rotate('+rotation+')');}requestAnimationFrame(anim);})();
-    window.addEventListener('resize',resize);svg.style.opacity='0';resize();
-  </script>
-</body>
-</html>
